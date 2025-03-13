@@ -1,0 +1,27 @@
+/.luarc.json
+
+# Quarto and LaTeX temporary files
+/.quarto/
+/_extensions/
+/_freeze/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# R specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata

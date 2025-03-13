@@ -46,9 +46,6 @@ format:
     documentmode: jou
     keep-tex: true
     cite-method: citeproc
-    classoption: 
-      - "colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue"
-      - "jou"
 
 ---
 
@@ -70,66 +67,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eg
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-```{r}
-#| label: tbl-demographics
-#| tbl-cap: "Participant Demographics by Group"
-#| echo: false
-
-library(knitr)
-library(kableExtra)
-
-# Create a data frame for the table
-data <- data.frame(
-  Characteristic = c("Age (years)", "Gender", "   Male", "   Female", "BMI (kg/m²)", "Physical Activity (min/week)"),
-  `Group 1 (n=25)` = c("35.2 ± 8.4", "", "12 (48%)", "13 (52%)", "24.3 ± 3.2", "156 ± 45"),
-  `Group 2 (n=25)` = c("36.5 ± 7.9", "", "13 (52%)", "12 (48%)", "25.1 ± 3.5", "148 ± 52"),
-  `Group 3 (n=25)` = c("34.8 ± 8.1", "", "14 (56%)", "11 (44%)", "24.7 ± 3.0", "152 ± 48")
-)
-
-# Create the table
-kable(data, format = "latex", booktabs = TRUE, align = c("l", "c", "c", "c")) %>%
-  kable_styling(latex_options = c("striped")) %>%
-  row_spec(0, bold = TRUE) %>%
-  row_spec(1, hline_after = TRUE) %>%
-  row_spec(4, hline_after = TRUE)
-```
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
-
-```{r}
-#| label: tbl-outcomes
-#| tbl-cap: "Primary Outcomes by Group at Baseline, 6 Weeks, and 12 Weeks"
-#| echo: false
-
-# Create a data frame for the outcomes table
-outcomes <- data.frame(
-  Measure = c("Physical Activity Self-Efficacy", "   Baseline", "   6 Weeks", "   12 Weeks", 
-              "Exercise Enjoyment", "   Baseline", "   6 Weeks", "   12 Weeks",
-              "Weekly Exercise Duration (min)", "   Baseline", "   6 Weeks", "   12 Weeks"),
-  `Group 1 (n=25)` = c("", "3.2 ± 0.8", "3.8 ± 0.9*", "4.2 ± 0.7**", 
-                        "", "2.9 ± 0.7", "3.5 ± 0.8*", "4.0 ± 0.6**",
-                        "", "156 ± 45", "185 ± 52*", "210 ± 48**"),
-  `Group 2 (n=25)` = c("", "3.3 ± 0.7", "3.5 ± 0.8", "3.7 ± 0.8*", 
-                        "", "3.0 ± 0.8", "3.3 ± 0.7", "3.5 ± 0.7*",
-                        "", "148 ± 52", "165 ± 48", "175 ± 50*"),
-  `Group 3 (n=25)` = c("", "3.2 ± 0.8", "3.3 ± 0.7", "3.4 ± 0.8", 
-                        "", "2.8 ± 0.9", "3.0 ± 0.8", "3.1 ± 0.7",
-                        "", "152 ± 48", "158 ± 50", "162 ± 52")
-)
-
-# Create the outcomes table
-kable(outcomes, format = "latex", booktabs = TRUE, align = c("l", "c", "c", "c")) %>%
-  kable_styling(latex_options = c("striped")) %>%
-  row_spec(0, bold = TRUE) %>%
-  row_spec(c(4, 8), hline_after = TRUE) %>%
-  add_footnote("*p < .05 compared to baseline; **p < .01 compared to baseline", notation = "none")
-```
 
 The three groups were comparable on baseline characteristics with no significant differences in age, gender distribution, BMI, or weekly physical activity levels (all $p > .05$).
 
 # Discussion
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 
