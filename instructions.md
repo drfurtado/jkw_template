@@ -2,6 +2,12 @@
 
 This document provides instructions for creating properly formatted tables in Quarto academic articles, specifically for the APA7 template with two-column layout.
 
+# Website documentation for this repo
+
+visit this site before implementing anything:
+
+https://wjschne.github.io/apaquarto/options.html
+
 ## Table Types
 
 There are two main types of tables you might need in an academic article:
