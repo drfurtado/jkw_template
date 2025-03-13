@@ -1,0 +1,61 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Participant Demographics by Group}{\label{tbl-demographics}}}
+\vspace{-20pt}}
+
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Characteristic} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
+\midrule
+\cellcolor{gray!10}{Age (years)} & \cellcolor{gray!10}{35.2 ± 8.4} & \cellcolor{gray!10}{36.5 ± 7.9} & \cellcolor{gray!10}{34.8 ± 8.1}\\
+\midrule
+Gender &  &  & \\
+\cellcolor{gray!10}{Male} & \cellcolor{gray!10}{12 (48\%)} & \cellcolor{gray!10}{13 (52\%)} & \cellcolor{gray!10}{14 (56\%)}\\
+Female & 13 (52\%) & 12 (48\%) & 11 (44\%)\\
+\midrule
+\cellcolor{gray!10}{BMI (kg/m²)} & \cellcolor{gray!10}{24.3 ± 3.2} & \cellcolor{gray!10}{25.1 ± 3.5} & \cellcolor{gray!10}{24.7 ± 3.0}\\
+\addlinespace
+Physical Activity (min/week) & 156 ± 45 & 148 ± 52 & 152 ± 48\\
+\bottomrule
+\end{tabular}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Primary Outcomes by Group at Baseline, 6 Weeks, and 12
+Weeks}{\label{tbl-outcomes}}}
+\vspace{-20pt}}
+
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Measure} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
+\midrule
+\cellcolor{gray!10}{Physical Activity Self-Efficacy} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+Baseline & 3.2 ± 0.8 & 3.3 ± 0.7 & 3.2 ± 0.8\\
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.8 ± 0.9*} & \cellcolor{gray!10}{3.5 ± 0.8} & \cellcolor{gray!10}{3.3 ± 0.7}\\
+12 Weeks & 4.2 ± 0.7** & 3.7 ± 0.8* & 3.4 ± 0.8\\
+\midrule
+\cellcolor{gray!10}{Exercise Enjoyment} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+\addlinespace
+Baseline & 2.9 ± 0.7 & 3.0 ± 0.8 & 2.8 ± 0.9\\
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.5 ± 0.8*} & \cellcolor{gray!10}{3.3 ± 0.7} & \cellcolor{gray!10}{3.0 ± 0.8}\\
+12 Weeks & 4.0 ± 0.6** & 3.5 ± 0.7* & 3.1 ± 0.7\\
+\midrule
+\cellcolor{gray!10}{Weekly Exercise Duration (min)} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+Baseline & 156 ± 45 & 148 ± 52 & 152 ± 48\\
+\addlinespace
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{185 ± 52*} & \cellcolor{gray!10}{165 ± 48} & \cellcolor{gray!10}{158 ± 50}\\
+12 Weeks & 210 ± 48** & 175 ± 50* & 162 ± 52\\
+\bottomrule
+\multicolumn{4}{l}{\textsuperscript{} *p < .05 compared to baseline; **p < .01 compared to baseline}\\
+\end{tabular}
+
+\end{table*}

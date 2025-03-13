@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - index.qmd
+    - installation.qmd
+    - options.qmd
+    - writing.qmd
+    - resources.qmd
+    - changelog.qmd
+
+website:
+  title: "APA Style Documents with apaquarto"
+  navbar:
+    left:
+      - text: Introduction
+        href: index.qmd
+      - installation.qmd
+      - options.qmd
+      - writing.qmd       
+      - resources.qmd
+      - changelog.qmd
+    right: 
+      - icon: github
+        href: https://github.com/wjschne/apaquarto
+        text: Source
+
+bibliography: bibliography.bib
+
+knitr: true
+
+format:
+  html:
+    theme: 
+      - spacelab
+      - apaquarto.scss
+    tbl-cap-location: top
+    toc: true
+    toc-location: left
+
+
+

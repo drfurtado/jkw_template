@@ -1,0 +1,374 @@
+\documentclass[
+  man,
+  longtable,
+  nolmodern,
+  notxfonts,
+  notimes,
+  colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{apa7}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+
+\RequirePackage{longtable}
+\RequirePackage{threeparttablex}
+
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+	{-.5em}%
+	{\normalfont\normalsize\bfseries\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{0.5em}%
+	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+	{-\z@\relax}%
+	{\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+
+
+
+\usepackage{longtable, booktabs, multirow, multicol, colortbl, hhline, caption, array, float, xpatch}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,theorems, breakable, skins}
+\usepackage{fontawesome5}
+
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{ACACAC}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582EC}
+\definecolor{quarto-callout-important-color-frame}{HTML}{D9534F}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{F0AD4E}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02B875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{FD7E14}
+
+%\newlength\Oldarrayrulewidth
+%\newlength\Oldtabcolsep
+
+
+\usepackage{hyperref}
+
+
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+
+
+\usepackage{newtx}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+
+
+
+
+\title{Training Current and Future Health-related Practitioners to
+Accurately and Appropriately Disseminate Physical Activity Guidelines}
+
+
+\shorttitle{Training Practitioners on Physical Activity Guidelines}
+
+
+\usepackage{etoolbox}
+
+
+\volume{13}
+
+
+
+
+
+
+
+\authorsnames[{1},{2},{1},{1}]{Jafra D. Thomas,Winston Kennedy,Bethany
+C. Lowe,Caroline N. Smith}
+
+
+
+
+
+
+
+\authorsaffiliations{
+{California Polytechnic State University},{Northeastern University}}
+
+
+
+
+\leftheader{Thomas, Kennedy, Lowe and Smith}
+
+
+
+\abstract{Current and future health-related practitioners have low
+awareness of physical activity guidelines (PAGs) for general and
+clinical populations. The purpose of the present study was to critically
+appraise the quality of one 2021 draft training video, which was
+designed to help current and future health related practitioners give
+advice consistent with general adult PAGs. A descriptive qualitative
+analysis was performed on open-ended responses provided by undergraduate
+research assistants (or recent alumni) affiliated with the first
+author's lab and uninvolved in the video's creation. Participation was
+optional, anonymous, and through an online questionnaire, open for seven
+days in April 2023 (14 invited, 8 participated, response rate =
+57.14\%). Participant feedback was compared to applicable standards of
+the RE-AIM framework (i.e., reach, efficacy, and adoption). Face
+validity and other quality measures were determined through qualitative
+analysis. The first author performed the descriptive analysis, and the
+second author, acting as a critical friend, independently verified the
+trustworthiness of the analysis. No issues were identified (i.e., a
+succinct and verbatim analysis). Participants generally agreed the draft
+video was clear, concise, informative, and interesting. Participants did
+not perceive any major concerns with the video (e.g.,
+non-offensive/biased), and their suggestions were used to finalize the
+training video (e.g., to add closed captioning, further explain a
+graph). Results confirmed the video had good face validity and could be
+effective within real-world educational settings for current and future
+health-related practitioners (e.g., low time burden, stimulating,
+informative). Future research should investigate learning outcomes of
+the video and its real-world implementation. }
+
+\keywords{Exercise science, kinesiology, knowledge translation, health
+communication, physical activity promotion guidelines, RE-AIM}
+
+\authornote{\par{\addORCIDlink{Jafra D.
+Thomas}{0000-0000-0000-0001}}\par{\addORCIDlink{Winston
+Kennedy}{0000-0000-0000-0002}}\par{\addORCIDlink{Bethany C.
+Lowe}{0000-0000-0000-0003}}\par{\addORCIDlink{Caroline N.
+Smith}{0000-0000-0000-0004}} 
+\par{ }
+\par{   The authors have no conflicts of interest to disclose.    }
+\par{Correspondence concerning this article should be addressed to Jafra
+D. Thomas, Email: jafra.thomas@example.org}
+}
+
+\makeatletter
+\let\endoldlt\endlongtable
+\def\endlongtable{
+\hline
+\endoldlt
+}
+\makeatother
+\RequirePackage{longtable}
+\DeclareDelayedFloatFlavor{longtable}{table}
+
+\urlstyle{same}
+
+
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+% From https://tex.stackexchange.com/a/645996/211326
+%%% apa7 doesn't want to add appendix section titles in the toc
+%%% let's make it do it
+\makeatletter
+\xpatchcmd{\appendix}
+  {\par}
+  {\addcontentsline{toc}{section}{\@currentlabelname}\par}
+  {}{}
+\makeatother
+
+%% Disable longtable counter
+%% https://tex.stackexchange.com/a/248395/211326
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\LT@caption}
+  {\bgroup}
+  {\bgroup\global\LTpatch@captiontrue}
+  {}{}
+\patchcmd{\longtable}
+  {\par}
+  {\par\global\LTpatch@captionfalse}
+  {}{}
+\apptocmd{\endlongtable}
+  {\ifLTpatch@caption\else\addtocounter{table}{-1}\fi}
+  {}{}
+\newif\ifLTpatch@caption
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\setlength\LTleft{0pt}
+
+
+\section{Introduction}\label{introduction}
+
+While current and future health-related practitioners should be better
+trained in using health behavior theory to counsel patients/clients and
+to plan services (Thomas \& Cardinal, 2021), another looming issue
+concerns their ability to accurately and appropriately disseminate
+physical activity guidelines (PAGs, i.e., the frequency, intensity,
+duration, and type of activities recommended for health-related fitness
+and psychological well-being; U.S. Department of Health \& Human
+Services, 2018; World Health Organization, 2020). Most health-related
+practitioners and college majors may lack PAG-awareness or precise
+knowledge of the guidelines (Cardinal et al., 2015; Vermeesch et al.,
+2020; Zenko \& Ekkekakis, 2015). For example, Zenko and Ekkekakis (2015)
+used an 11-item multiple-choice test to assess practical knowledge of
+aerobic PAGs in a large and diverse sample of students and
+professionals. The mean score for the number of correct answers was
+42.87\% (95\% CI = 42.08-43.65\%). While job type and education level
+were significant predictors of test scores, the overall low scores
+suggest a need for improved training.
+
+\section{Method}\label{method}
+
+\subsection{Participants}\label{participants}
+
+Participants were undergraduate research assistants or recent alumni
+affiliated with the first author's lab and uninvolved in the video's
+creation. Participation was optional, anonymous, and through an online
+questionnaire, open for seven days in April 2023. Of the 14 individuals
+invited, 8 participated (response rate = 57.14\%).
+
+\subsection{Measures}\label{measures}
+
+The primary measure was a qualitative questionnaire designed to gather
+feedback on the draft training video. The questionnaire included
+open-ended questions about the clarity, informativeness, and potential
+effectiveness of the video. Responses were analyzed using a descriptive
+qualitative approach and compared to applicable standards of the RE-AIM
+framework (i.e., reach, efficacy, and adoption).
+
+\subsection{Procedure}\label{procedure}
+
+Participants were sent a link to view the draft training video and
+complete the online questionnaire. The first author performed the
+descriptive analysis of the responses, and the second author, acting as
+a critical friend, independently verified the trustworthiness of the
+analysis.
+
+\section{Results}\label{results}
+
+Participants generally agreed the draft video was clear, concise,
+informative, and interesting. No issues were identified in the analysis
+(i.e., a succinct and verbatim analysis). Participants did not perceive
+any major concerns with the video (e.g., non-offensive/biased), and
+their suggestions were used to finalize the training video (e.g., to add
+closed captioning, further explain a graph).
+
+\section{Discussion}\label{discussion}
+
+Results confirmed the video had good face validity and could be
+effective within real-world educational settings for current and future
+health-related practitioners (e.g., low time burden, stimulating,
+informative). The feedback provided valuable insights for finalizing the
+training video and ensuring its effectiveness in disseminating physical
+activity guidelines.
+
+\subsection{Limitations and Future
+Directions}\label{limitations-and-future-directions}
+
+Limitations of this study include the small sample size and the fact
+that participants were affiliated with the first author's lab. Future
+research should investigate learning outcomes of the video and its
+real-world implementation with a larger and more diverse sample of
+health-related practitioners and students.
+
+\subsection{Conclusion}\label{conclusion}
+
+The training video developed in this study shows promise as an effective
+tool for improving health-related practitioners' knowledge and
+dissemination of physical activity guidelines. By addressing the current
+gap in PAG awareness and knowledge, this video could contribute to
+better health outcomes for patients and clients.
+
+
+
+
+
+
+\end{document}

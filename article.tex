@@ -1,0 +1,631 @@
+\documentclass[
+  jou,
+  longtable,
+  nolmodern,
+  notxfonts,
+  notimes,
+  colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+  jou]{apa7}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+
+\RequirePackage{longtable}
+\RequirePackage{threeparttablex}
+
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+	{-.5em}%
+	{\normalfont\normalsize\bfseries\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{0.5em}%
+	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+	{-\z@\relax}%
+	{\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+
+
+
+\usepackage{longtable, booktabs, multirow, multicol, colortbl, hhline, caption, array, float, xpatch}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,theorems, breakable, skins}
+\usepackage{fontawesome5}
+
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{ACACAC}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582EC}
+\definecolor{quarto-callout-important-color-frame}{HTML}{D9534F}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{F0AD4E}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02B875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{FD7E14}
+
+%\newlength\Oldarrayrulewidth
+%\newlength\Oldtabcolsep
+
+
+\usepackage{hyperref}
+
+
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+\usepackage[nolongtablepatch]{lineno}
+\linenumbers
+
+
+
+\usepackage{newtx}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+
+
+
+
+\title{Lorem Ipsum: Lorem ipsum dolor sit amet}
+
+
+\shorttitle{Lorem Ipsum}
+
+
+\usepackage{etoolbox}
+
+
+\journal{\bfseries \Large Journal of Kinesiology and Wellness}
+\volume{\vskip 1mm \normalsize A Publication of the Western Society for
+Kinesiology and Wellness\newline Volume 13, Number 1, Pages 1-12,
+2024\newline ISSN\# 2332-4503}
+
+
+
+\author{~}
+
+\affiliation{}
+
+
+
+
+
+
+\abstract{Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc,
+quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam
+ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. }
+
+\keywords{Lorem ipsum, dolor sit, amet, consectetur, adipiscing
+elit, RE-AIM}
+
+
+\usepackage{pbalance} 
+\usepackage{float}
+\makeatletter
+\let\oldtpt\ThreePartTable
+\let\endoldtpt\endThreePartTable
+\def\ThreePartTable{\@ifnextchar[\ThreePartTable@i \ThreePartTable@ii}
+\def\ThreePartTable@i[#1]{\begin{figure}[!htbp]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldtpt[#1]
+}
+\def\ThreePartTable@ii{\begin{figure}[!htbp]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldtpt
+}
+\def\endThreePartTable{
+\endoldtpt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
+
+
+\makeatletter
+\let\endoldlt\endlongtable		
+\def\endlongtable{
+\hline
+\endoldlt}
+\makeatother
+
+\newenvironment{twocolumntable}% environment name
+{% begin code
+\begin{table*}[!htbp]%
+\onecolumn%
+}%
+{%
+\twocolumn%
+\end{table*}%
+}% end code
+
+\urlstyle{same}
+
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+% From https://tex.stackexchange.com/a/645996/211326
+%%% apa7 doesn't want to add appendix section titles in the toc
+%%% let's make it do it
+\makeatletter
+\xpatchcmd{\appendix}
+  {\par}
+  {\addcontentsline{toc}{section}{\@currentlabelname}\par}
+  {}{}
+\makeatother
+
+%% Disable longtable counter
+%% https://tex.stackexchange.com/a/248395/211326
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\LT@caption}
+  {\bgroup}
+  {\bgroup\global\LTpatch@captiontrue}
+  {}{}
+\patchcmd{\longtable}
+  {\par}
+  {\par\global\LTpatch@captionfalse}
+  {}{}
+\apptocmd{\endlongtable}
+  {\ifLTpatch@caption\else\addtocounter{table}{-1}\fi}
+  {}{}
+\newif\ifLTpatch@caption
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\setlength\LTleft{0pt}
+
+\resetlinenumber[1]
+
+\section{Introduction}\label{introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+(\citeproc{ref-Thomas2021}{Thomas \& Cardinal, 2021}). Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl
+(\citeproc{ref-USDHHS2018}{U.S. Department of Health and Human Services,
+2018}; \citeproc{ref-WHO2020}{World Health Organization, 2020}). Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
+\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
+\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
+(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
+\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
+\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
+(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
+\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
+\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
+(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies.
+
+\section{Method}\label{method}
+
+\subsection{Participants}\label{participants}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\subsection{Materials}\label{materials}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\section{Results}\label{results}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\begin{verbatim}
+Warning: package 'knitr' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{ThreePartTable}
+
+\begin{table}
+
+\caption{\label{tbl-demographics}Participant Demographics by Group}
+
+\centering{
+
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Characteristic} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
+\midrule
+\cellcolor{gray!10}{Age (years)} & \cellcolor{gray!10}{35.2 ± 8.4} & \cellcolor{gray!10}{36.5 ± 7.9} & \cellcolor{gray!10}{34.8 ± 8.1}\\
+\midrule
+Gender &  &  & \\
+\cellcolor{gray!10}{Male} & \cellcolor{gray!10}{12 (48\%)} & \cellcolor{gray!10}{13 (52\%)} & \cellcolor{gray!10}{14 (56\%)}\\
+Female & 13 (52\%) & 12 (48\%) & 11 (44\%)\\
+\midrule
+\cellcolor{gray!10}{BMI (kg/m²)} & \cellcolor{gray!10}{24.3 ± 3.2} & \cellcolor{gray!10}{25.1 ± 3.5} & \cellcolor{gray!10}{24.7 ± 3.0}\\
+\addlinespace
+Physical Activity (min/week) & 156 ± 45 & 148 ± 52 & 152 ± 48\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+\end{ThreePartTable}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\begin{ThreePartTable}
+
+\begin{table}
+
+\caption{\label{tbl-outcomes}Primary Outcomes by Group at Baseline, 6
+Weeks, and 12 Weeks}
+
+\centering{
+
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Measure} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
+\midrule
+\cellcolor{gray!10}{Physical Activity Self-Efficacy} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+Baseline & 3.2 ± 0.8 & 3.3 ± 0.7 & 3.2 ± 0.8\\
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.8 ± 0.9*} & \cellcolor{gray!10}{3.5 ± 0.8} & \cellcolor{gray!10}{3.3 ± 0.7}\\
+12 Weeks & 4.2 ± 0.7** & 3.7 ± 0.8* & 3.4 ± 0.8\\
+\midrule
+\cellcolor{gray!10}{Exercise Enjoyment} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+\addlinespace
+Baseline & 2.9 ± 0.7 & 3.0 ± 0.8 & 2.8 ± 0.9\\
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.5 ± 0.8*} & \cellcolor{gray!10}{3.3 ± 0.7} & \cellcolor{gray!10}{3.0 ± 0.8}\\
+12 Weeks & 4.0 ± 0.6** & 3.5 ± 0.7* & 3.1 ± 0.7\\
+\midrule
+\cellcolor{gray!10}{Weekly Exercise Duration (min)} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+Baseline & 156 ± 45 & 148 ± 52 & 152 ± 48\\
+\addlinespace
+\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{185 ± 52*} & \cellcolor{gray!10}{165 ± 48} & \cellcolor{gray!10}{158 ± 50}\\
+12 Weeks & 210 ± 48** & 175 ± 50* & 162 ± 52\\
+\bottomrule
+\multicolumn{4}{l}{\textsuperscript{} *p < .05 compared to baseline; **p < .01 compared to baseline}\\
+\end{tabular}
+
+}
+
+\end{table}%
+
+\end{ThreePartTable}
+
+The three groups were comparable on baseline characteristics with no
+significant differences in age, gender distribution, BMI, or weekly
+physical activity levels (all \(p > .05\)).
+
+\section{Discussion}\label{discussion}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+\section{Limitations and Future
+Directions}\label{limitations-and-future-directions}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\section{Conclusion}\label{conclusion}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+\subsection{Corresponding Author}\label{corresponding-author}
+
+Marcus A. Rodriguez, Ph.D.\textbackslash{} Pacific Northwest University,
+Department of Kinesiology\textbackslash{} Department of
+Kinesiology\textbackslash{} 123 University Way\textbackslash{} Seattle,
+WA 98101\textbackslash{} Email: marcus.rodriguez@example.org
+
+\subsection{Copyright Notice}\label{copyright-notice}
+
+\copyright 2024 by Marcus A. Rodriguez, Sophia K. Chen, Jamal L.
+Washington, Elena R. Patel, and William C. Whiting.
+
+\subsection{License}\label{license}
+
+\textbf{CC BY-NC-ND 4.0}
+
+This work is licensed under a Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International License.
+
+\section{References}\label{references}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Cardinal2015}
+Cardinal, B. J., Park, E. A., Kim, M., \& Cardinal, M. K. (2015). If
+exercise is medicine, where is exercise in medicine? Review of u.s.
+Medical education curricula for physical activity-related content.
+\emph{Journal of Physical Activity and Health}, \emph{12}(9),
+1336--1343. \url{https://doi.org/10.1123/jpah.2014-0316}
+
+\bibitem[\citeproctext]{ref-Thomas2021}
+Thomas, J. D., \& Cardinal, B. J. (2021). Toward a more meaningful
+teaching of health behavior theory in physical activity education.
+\emph{Quest}, \emph{73}(2), 207--229.
+\url{https://doi.org/10.1080/00336297.2021.1886264}
+
+\bibitem[\citeproctext]{ref-USDHHS2018}
+U.S. Department of Health and Human Services. (2018). \emph{Physical
+activity guidelines for americans} (2nd ed.). U.S. Department of Health;
+Human Services.
+
+\bibitem[\citeproctext]{ref-Vermeesch2020}
+Vermeesch, A. L., Ling, J., Voskuil, V. R., Bakhoya, M., Tuthill, S. M.,
+Fowler, C. A., \& Robbins, L. B. (2020). Nurse practitioner students'
+knowledge, attitudes, and beliefs about health promotion and disease
+prevention. \emph{The Journal for Nurse Practitioners}, \emph{16}(3),
+226--231. \url{https://doi.org/10.1016/j.nurpra.2019.12.029}
+
+\bibitem[\citeproctext]{ref-WHO2020}
+World Health Organization. (2020). \emph{WHO guidelines on physical
+activity and sedentary behaviour}. World Health Organization.
+
+\bibitem[\citeproctext]{ref-Zenko2015}
+Zenko, Z., \& Ekkekakis, P. (2015). Knowledge of exercise prescription
+guidelines among certified exercise professionals. \emph{Journal of
+Strength and Conditioning Research}, \emph{29}(5), 1422--1432.
+\url{https://doi.org/10.1519/JSC.0000000000000771}
+
+\end{CSLReferences}
+
+
+
+
+
+
+\end{document}

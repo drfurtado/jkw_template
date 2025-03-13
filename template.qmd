@@ -1,0 +1,83 @@
+---
+title: "Journal of Kinesiology and Wellness"
+shorttitle: "Journal of Kinesiology and Wellness"
+# Add journal information
+volume: 13
+number: 1
+pages: "1-12"
+year: 2024
+issn: "2332-4503"
+publication: "A Publication of the Western Society for Kinesiology and Wellness"
+author:
+  - name: Jafra D. Thomas
+    corresponding: true
+    orcid: 0000-0000-0000-0001
+    email: jafra.thomas@example.org
+    affiliations:
+      - id: id1
+        name: "California Polytechnic State University"
+        city: San Luis Obispo
+  - name: Winston Kennedy
+    orcid: 0000-0000-0000-0002
+    affiliations:
+      - id: id2
+        name: "Northeastern University"
+        city: Boston
+        region: Massachusetts
+  - name: Bethany C. Lowe
+    orcid: 0000-0000-0000-0003
+    affiliations:
+      - ref: id1
+  - name: Caroline N. Smith
+    orcid: 0000-0000-0000-0004
+    affiliations:
+      - ref: id1
+author-note:
+  status-changes: 
+    affiliation-change: ~
+    deceased: ~
+  disclosures:
+    study-registration: ~
+    data-sharing: ~
+    related-report: ~
+    conflict-of-interest: ~
+    financial-support: ~
+    gratitude: ~
+    authorship-agreements: ~
+abstract: "Current and future health-related practitioners have low awareness of physical activity guidelines (PAGs) for general and clinical populations. The purpose of the present study was to critically appraise the quality of one 2021 draft training video, which was designed to help current and future health related practitioners give advice consistent with general adult PAGs. A descriptive qualitative analysis was performed on open-ended responses provided by undergraduate research assistants (or recent alumni) affiliated with the first author's lab and uninvolved in the video's creation. Participation was optional, anonymous, and through an online questionnaire, open for seven days in April 2023 (14 invited, 8 participated, response rate = 57.14%). Participant feedback was compared to applicable standards of the RE-AIM framework (i.e., reach, efficacy, and adoption). Face validity and other quality measures were determined through qualitative analysis. The first author performed the descriptive analysis, and the second author, acting as a critical friend, independently verified the trustworthiness of the analysis. No issues were identified (i.e., a succinct and verbatim analysis). Participants generally agreed the draft video was clear, concise, informative, and interesting. Participants did not perceive any major concerns with the video (e.g., non-offensive/biased), and their suggestions were used to finalize the training video (e.g., to add closed captioning, further explain a graph). Results confirmed the video had good face validity and could be effective within real-world educational settings for current and future health-related practitioners (e.g., low time burden, stimulating, informative). Future research should investigate learning outcomes of the video and its real-world implementation."
+keywords: [Exercise science, kinesiology, knowledge translation, health communication, physical activity promotion guidelines, RE-AIM]
+bibliography: bibliography.bib
+format:
+  apaquarto-docx: default
+  apaquarto-html: default
+  apaquarto-typst: default
+  apaquarto-pdf:
+    documentmode: jou
+---
+
+# Method
+
+## Participants
+
+## Measures
+
+## Procedure
+
+# Results
+
+# Discussion
+
+## Limitations and Future Directions
+
+## Conclusion
+
+# References
+
+<!-- References will auto-populate in the refs div below -->
+
+::: {#refs}
+:::
+
+# Appendix
+
+# Title for Appendix
