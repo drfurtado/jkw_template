@@ -8,6 +8,10 @@ visit this site before implementing anything:
 
 https://wjschne.github.io/apaquarto/options.html
 
+# Issues with this repo and fixes
+
+https://github.com/wjschne/apaquarto/issues/38
+
 ## Table Types
 
 There are two main types of tables you might need in an academic article:

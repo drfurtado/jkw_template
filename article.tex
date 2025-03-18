@@ -1,11 +1,11 @@
 \documentclass[
   jou,
+  floatsintext,
   longtable,
   nolmodern,
   notxfonts,
   notimes,
-  colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
-  jou]{apa7}
+  colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{apa7}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -131,8 +131,6 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
-\usepackage[nolongtablepatch]{lineno}
-\linenumbers
 
 
 
@@ -145,7 +143,8 @@
 
 
 
-\title{Lorem Ipsum: Lorem ipsum dolor sit amet}
+\title{\vskip 1cm
+\bfseries Lorem ipsum dolor sit amet, consectetur adipiscing elit. \\ Lorem ipsum dolor sit amet, consectetur.}
 
 
 \shorttitle{Lorem Ipsum}
@@ -154,19 +153,34 @@
 \usepackage{etoolbox}
 
 
-\journal{\bfseries \Large Journal of Kinesiology and Wellness}
+\journal{\bfseries \large Journal of Kinesiology and Wellness}
 \volume{\vskip 1mm \normalsize A Publication of the Western Society for
-Kinesiology and Wellness\newline Volume 13, Number 1, Pages 1-12,
-2024\newline ISSN\# 2332-4503}
+Kinesiology and Wellness\newline Volume 14, Number 1, Pages ??-??,
+2025\newline ISSN\# 2323-4505}
 
 
 
-\author{~}
-
-\affiliation{}
 
 
 
+
+\authorsnames[{1},{1},{2,3},{4}]{Ana Fulano,Blanca Zutano,Carina
+Mengano,Dolorita C. Perengano}
+
+
+
+
+
+
+
+\authorsaffiliations{
+{Department of Psychology, Ana and Blanca's University},{Carina's
+Primary Affiliation},{Carina's Secondary Affiliation},{Buffalo, NY }}
+
+
+
+
+\leftheader{Fulano, Zutano, Mengano and C.}
 
 
 
@@ -179,11 +193,42 @@ nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies. }
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget
+aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu
+nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget
+nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies,
+nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl
+eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc,
+quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam
+ultricies. Sed vitae nisl eget nisl aliquam ultricies. }
 
 \keywords{Lorem ipsum, dolor sit, amet, consectetur, adipiscing
 elit, RE-AIM}
 
+\authornote{\par{\addORCIDlink{Ana
+Fulano}{0000-0000-0000-0001}}\par{\addORCIDlink{Blanca
+Zutano}{0000-0000-0000-0002}}\par{\addORCIDlink{Carina
+Mengano}{0000-0000-0000-0003}}\par{\addORCIDlink{Dolorita C.
+Perengano}{0000-0000-0000-0004}} 
+
+\par{   The authors have no conflicts of interest to disclose.    Author
+roles were classified using the Contributor Role Taxonomy (CRediT;
+https://credit.niso.org/) as follows:  Ana
+Fulano:   conceptualization, writing; Blanca Zutano:   project
+administration, formal analysis; Carina Mengano:   formal
+analysis, writing; Dolorita C. Perengano:   writing, methodology, formal
+analysis}
+\par{Correspondence concerning this article should be addressed to Ana
+Fulano, Department of Psychology, Ana and Blanca's University, 1234
+Capital
+St., Albany, NY 12084-1234, USA, Email: \href{mailto:sm@example.org}{sm@example.org}}
+}
 
 \usepackage{pbalance} 
 \usepackage{float}
@@ -230,20 +275,15 @@ elit, RE-AIM}
 
 
 
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
+% Add spacing after journal information but before title
+\makeatletter
+\let\old@title@hook\@title@hook
+\def\@title@hook{%
+  \old@title@hook
+  \vspace{1.5cm}% Add space before title
+}
+\makeatother
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -325,9 +365,6 @@ elit, RE-AIM}
 
 \setlength\LTleft{0pt}
 
-\resetlinenumber[1]
-
-\section{Introduction}\label{introduction}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit
 (\citeproc{ref-Thomas2021}{Thomas \& Cardinal, 2021}). Nullam euismod,
@@ -338,28 +375,23 @@ ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl
 (\citeproc{ref-USDHHS2018}{U.S. Department of Health and Human Services,
 2018}; \citeproc{ref-WHO2020}{World Health Organization, 2020}). Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
-\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
-\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
-(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
-vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
-\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
-\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
-(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
-vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies (\citeproc{ref-Cardinal2015}{Cardinal et al., 2015};
-\citeproc{ref-Vermeesch2020}{Vermeesch et al., 2020};
-\citeproc{ref-Zenko2015}{Zenko \& Ekkekakis, 2015}). Zenko and Ekkekakis
-(\citeproc{ref-Zenko2015}{2015}) found that lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
-vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies.
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget
+aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu
+nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget
+nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies,
+nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl
+eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc,
+quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam
+ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod,
+nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
+nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
+eget nisl aliquam ultricies.
 
 \section{Method}\label{method}
 
@@ -379,7 +411,7 @@ nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-\section{Results}\label{results}
+\section{Results}\label{sec-results}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
 nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
@@ -387,92 +419,150 @@ nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-\begin{verbatim}
-Warning: package 'knitr' was built under R version 4.3.3
-\end{verbatim}
-
-\begin{ThreePartTable}
-
-\begin{table}
-
-\caption{\label{tbl-demographics}Participant Demographics by Group}
-
-\centering{
-
-\centering
-\begin{tabular}{lccc}
-\toprule
-\textbf{Characteristic} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
-\midrule
-\cellcolor{gray!10}{Age (years)} & \cellcolor{gray!10}{35.2 ± 8.4} & \cellcolor{gray!10}{36.5 ± 7.9} & \cellcolor{gray!10}{34.8 ± 8.1}\\
-\midrule
-Gender &  &  & \\
-\cellcolor{gray!10}{Male} & \cellcolor{gray!10}{12 (48\%)} & \cellcolor{gray!10}{13 (52\%)} & \cellcolor{gray!10}{14 (56\%)}\\
-Female & 13 (52\%) & 12 (48\%) & 11 (44\%)\\
-\midrule
-\cellcolor{gray!10}{BMI (kg/m²)} & \cellcolor{gray!10}{24.3 ± 3.2} & \cellcolor{gray!10}{25.1 ± 3.5} & \cellcolor{gray!10}{24.7 ± 3.0}\\
-\addlinespace
-Physical Activity (min/week) & 156 ± 45 & 148 ± 52 & 152 ± 48\\
-\bottomrule
-\end{tabular}
-
-}
-
-\end{table}%
-
-\end{ThreePartTable}
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
 nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
 nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
-
-\begin{ThreePartTable}
-
-\begin{table}
-
-\caption{\label{tbl-outcomes}Primary Outcomes by Group at Baseline, 6
-Weeks, and 12 Weeks}
-
-\centering{
-
-\centering
-\begin{tabular}{lccc}
-\toprule
-\textbf{Measure} & \textbf{Group.1..n.25.} & \textbf{Group.2..n.25.} & \textbf{Group.3..n.25.}\\
-\midrule
-\cellcolor{gray!10}{Physical Activity Self-Efficacy} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
-Baseline & 3.2 ± 0.8 & 3.3 ± 0.7 & 3.2 ± 0.8\\
-\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.8 ± 0.9*} & \cellcolor{gray!10}{3.5 ± 0.8} & \cellcolor{gray!10}{3.3 ± 0.7}\\
-12 Weeks & 4.2 ± 0.7** & 3.7 ± 0.8* & 3.4 ± 0.8\\
-\midrule
-\cellcolor{gray!10}{Exercise Enjoyment} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
-\addlinespace
-Baseline & 2.9 ± 0.7 & 3.0 ± 0.8 & 2.8 ± 0.9\\
-\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{3.5 ± 0.8*} & \cellcolor{gray!10}{3.3 ± 0.7} & \cellcolor{gray!10}{3.0 ± 0.8}\\
-12 Weeks & 4.0 ± 0.6** & 3.5 ± 0.7* & 3.1 ± 0.7\\
-\midrule
-\cellcolor{gray!10}{Weekly Exercise Duration (min)} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
-Baseline & 156 ± 45 & 148 ± 52 & 152 ± 48\\
-\addlinespace
-\cellcolor{gray!10}{6 Weeks} & \cellcolor{gray!10}{185 ± 52*} & \cellcolor{gray!10}{165 ± 48} & \cellcolor{gray!10}{158 ± 50}\\
-12 Weeks & 210 ± 48** & 175 ± 50* & 162 ± 52\\
-\bottomrule
-\multicolumn{4}{l}{\textsuperscript{} *p < .05 compared to baseline; **p < .01 compared to baseline}\\
-\end{tabular}
-
-}
-
-\end{table}%
-
-\end{ThreePartTable}
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
+vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
+ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
+aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies.
 
 The three groups were comparable on baseline characteristics with no
 significant differences in age, gender distribution, BMI, or weekly
 physical activity levels (all \(p > .05\)).
 
-\section{Discussion}\label{discussion}
+\begin{ThreePartTable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\caption{Table Caption of a Markdown
+Table}\label{tbl-mymarkdowntable}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Default
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Left
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Right
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Center
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Default
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Left
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Right
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Center
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+12 & 12 & 12 & 12 \\
+123 & 123 & 123 & 123 \\
+1 & 1 & 1 & 1 \\
+\end{longtable}
+
+{\vspace{-3em}
+\noindent \emph{Note.} This is a note below the markdown table.}
+
+\end{ThreePartTable}
+
+To refer to this table in text, use the \texttt{@} symbol followed by
+the reference label like so: As seen in \textbf{?@tbl-mytable}, the
+first few numbers and letters of the alphabet are displayed.
+
+What if you want the tables and figures to be at the end of the
+document? In the .pdf format, you can set the \texttt{floatsintext}
+option to false. For .html and .docx documents, there is not yet an
+automatic way to put tables and figures at the end. You can, of course,
+just put them all at the end, in order. The reference labels will work
+no matter where they are in the text.
+
+\begin{twocolumntable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1220}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}
+  >{\centering\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1098}}@{}}
+\caption{Table Showing Data Across Multiple Categories and Values That
+Spans Two Columns}\label{tbl-widedata}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 8
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Value 8
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Group A & 10.2 & 15.7 & 22.3 & 18.9 & 24.5 & 30.1 & 27.8 & 33.4 \\
+Group B & 11.5 & 16.8 & 21.4 & 19.2 & 25.7 & 29.3 & 26.9 & 32.5 \\
+Group C & 12.7 & 17.9 & 20.5 & 17.8 & 26.8 & 28.4 & 25.6 & 31.7 \\
+\end{longtable}
+
+{\vspace{-2em}
+\noindent \emph{Note.} This table spans both columns in journal mode PDF output.}
+
+\end{twocolumntable}
+
+\section{Discussion}\label{sec-discussion}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
 nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
@@ -484,15 +574,18 @@ ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
 aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
 aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
-vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
-ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
-aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
-aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+When creating tables and figures in journal mode, care must be taken not
+to make figures and tables wider than the columns, otherwise \LaTeX
+sometimes makes them disappear.
+
+Here's an example of a table that spans two columns in journal mode.
+This is particularly useful for wide tables that contain many columns of
+data or information that would be difficult to read in a narrow column
+format.
+
+After inserting a wide table like this, you can continue with your
+document text. The table will be properly formatted in journal mode to
+span both columns, making it more readable.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
 nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
@@ -502,37 +595,37 @@ ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
 ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
 aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
-aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
 ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
 aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
-aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
 ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
 aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
-aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed
 vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam
 ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl
 aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl
-aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam
+euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis
+aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies.
+Sed vitae nisl eget nisl aliquam ultricies.
 
 \section{Limitations and Future
 Directions}\label{limitations-and-future-directions}
@@ -541,19 +634,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
 nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
 nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl
-nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
-eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
-ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl
+eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget
+nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies,
+nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Lorem ipsum
+dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget
+aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu
+nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget
+nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies,
+nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
 \section{Conclusion}\label{conclusion}
 
@@ -563,36 +654,22 @@ nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl
 eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam
 ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-\subsection{Corresponding Author}\label{corresponding-author}
-
-Marcus A. Rodriguez, Ph.D.\textbackslash{} Pacific Northwest University,
-Department of Kinesiology\textbackslash{} Department of
-Kinesiology\textbackslash{} 123 University Way\textbackslash{} Seattle,
-WA 98101\textbackslash{} Email: marcus.rodriguez@example.org
-
 \subsection{Copyright Notice}\label{copyright-notice}
 
-\copyright 2024 by Marcus A. Rodriguez, Sophia K. Chen, Jamal L.
-Washington, Elena R. Patel, and William C. Whiting.
+\noindent \copyright 2024 by Marcus A. Rodriguez, Sophia K. Chen, Jamal
+L. Washington, Elena R. Patel, and William C. Whiting.
 
 \subsection{License}\label{license}
 
-\textbf{CC BY-NC-ND 4.0}
+\noindent \textbf{CC BY-NC-ND 4.0}
 
-This work is licensed under a Creative Commons
+\noindent This work is licensed under a Creative Commons
 Attribution-NonCommercial-NoDerivatives 4.0 International License.
 
 \section{References}\label{references}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-Cardinal2015}
-Cardinal, B. J., Park, E. A., Kim, M., \& Cardinal, M. K. (2015). If
-exercise is medicine, where is exercise in medicine? Review of u.s.
-Medical education curricula for physical activity-related content.
-\emph{Journal of Physical Activity and Health}, \emph{12}(9),
-1336--1343. \url{https://doi.org/10.1123/jpah.2014-0316}
-
 \bibitem[\citeproctext]{ref-Thomas2021}
 Thomas, J. D., \& Cardinal, B. J. (2021). Toward a more meaningful
 teaching of health behavior theory in physical activity education.
@@ -604,22 +681,9 @@ U.S. Department of Health and Human Services. (2018). \emph{Physical
 activity guidelines for americans} (2nd ed.). U.S. Department of Health;
 Human Services.
 
-\bibitem[\citeproctext]{ref-Vermeesch2020}
-Vermeesch, A. L., Ling, J., Voskuil, V. R., Bakhoya, M., Tuthill, S. M.,
-Fowler, C. A., \& Robbins, L. B. (2020). Nurse practitioner students'
-knowledge, attitudes, and beliefs about health promotion and disease
-prevention. \emph{The Journal for Nurse Practitioners}, \emph{16}(3),
-226--231. \url{https://doi.org/10.1016/j.nurpra.2019.12.029}
-
 \bibitem[\citeproctext]{ref-WHO2020}
 World Health Organization. (2020). \emph{WHO guidelines on physical
 activity and sedentary behaviour}. World Health Organization.
-
-\bibitem[\citeproctext]{ref-Zenko2015}
-Zenko, Z., \& Ekkekakis, P. (2015). Knowledge of exercise prescription
-guidelines among certified exercise professionals. \emph{Journal of
-Strength and Conditioning Research}, \emph{29}(5), 1422--1432.
-\url{https://doi.org/10.1519/JSC.0000000000000771}
 
 \end{CSLReferences}
 

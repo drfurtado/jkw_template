@@ -1,0 +1,8 @@
+% Add spacing after journal information but before title
+\makeatletter
+\let\old@title@hook\@title@hook
+\def\@title@hook{%
+  \old@title@hook
+  \vspace{1.5cm}% Add space before title
+}
+\makeatother

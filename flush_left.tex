@@ -1,0 +1,11 @@
+% Custom command for flush left text
+\makeatletter
+\newenvironment{flushlefttext}{%
+  \setlength{\leftskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \raggedright
+}{%
+  \par
+}
+\makeatother

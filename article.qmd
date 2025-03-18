@@ -1,57 +1,93 @@
 ---
-title: "Lorem Ipsum: Lorem ipsum dolor sit amet"
+title: "\\vskip 1cm \\bfseries Lorem ipsum dolor sit amet, consectetur adipiscing elit. \\\\ Lorem ipsum dolor sit amet, consectetur."
 shorttitle: "Lorem Ipsum"
 author:
-  - name: Marcus A. Rodriguez
+  - name: Ana Fulano
     corresponding: true
     orcid: 0000-0000-0000-0001
-    email: marcus.rodriguez@example.org
+    email: sm@example.org
+    url: https://example.org/
+    # Roles are optional. 
+    # Select from the CRediT: Contributor Roles Taxonomy https://credit.niso.org/
+    # conceptualization, data curation, formal Analysis, funding acquisition, investigation, 
+    # methodology, project administration, resources, software, supervision, validation, 
+    # visualization, writing, editing
+    roles:
+      - conceptualization
+      - writing
     affiliations:
       - id: id1
-        name: Pacific Northwest University
-        city: Seattle
-  - name: Sophia K. Chen
+        name: "Ana and Blanca's University"
+        group: Clinical Psychology Program
+        department: Department of Psychology
+        address: 1234 Capital St.
+        city: Albany
+        region: NY
+        country: USA
+        postal-code: 12084-1234
+  - name: Blanca Zutano
     orcid: 0000-0000-0000-0002
-    affiliations:
-      - id: id2
-        name: Midwest Institute of Health Sciences
-        city: Chicago
-        region: Illinois
-  - name: Jamal L. Washington
+    roles:
+      - project administration
+      - formal analysis
+    affiliations: 
+      - ref: id1
+  - name: Carina Mengano
     orcid: 0000-0000-0000-0003
+    deceased: true
+    roles:
+      - formal analysis
+      - writing
     affiliations:
-      - ref: id1
-  - name: Elena R. Patel
+      - name: "Carina's Primary Affiliation"
+      - name: "Carina's Secondary Affiliation"
+    # Because Dolorita is unaffiliated, specify her city instead
+  - name: 
+      - given: Dolorita C.
+        family: Perengano
     orcid: 0000-0000-0000-0004
+    roles:
+      - writing
+      - methodology
+      - formal analysis
+    # List city and region/state for unaffiliated authors
     affiliations:
-      - ref: id1
+      - city: Buffalo
+        region: NY
+blank-lines-above-author-note: 2
 author-note:
   disclosures:
     conflict-of-interest: The authors have no conflicts of interest to disclose.
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
 keywords: [Lorem ipsum, dolor sit, amet, consectetur, adipiscing elit, RE-AIM]
 bibliography: bibliography.bib
 # Numbered lines (.pdf and .docx only)
 numbered-lines: false
 # Instead of suppressing the entire title page, use more specific options
 suppress-title-page: false
-suppress-author: true
-suppress-affiliation: true
-suppress-author-note: true
-suppress-orcid: true
+suppress-author: false
+suppress-affiliation: false
+suppress-author-note: false
+suppress-orcid: false
 format:
   apaquarto-pdf:
-    journal: "\\bfseries \\Large Journal of Kinesiology and Wellness"
-    volume: "\\vskip 5mm \\normalsize A Publication of the Western Society for Kinesiology and Wellness\\newline Volume 13, Number 1, Pages 1-12, 2024\\newline ISSN# 2332-4503"
+    journal: "\\bfseries \\large Journal of Kinesiology and Wellness"
+    volume: "\\vskip 1mm \\normalsize A Publication of the Western Society for Kinesiology and Wellness\\newline Volume 14, Number 1, Pages ??-??, 2025\\newline ISSN# 2323-4505"
     documentmode: jou
-    keep-tex: true
+    #classoption: jou
     cite-method: citeproc
-
+    include-in-header:
+      - title_spacing.tex
+      - text: |
+          \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+    citation-style: apa
+    citation: true
+    keep-tex: true
+    floatsintext: true
 ---
 
-# Introduction
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@Thomas2021]. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl [@USDHHS2018; @WHO2020]. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies [@Cardinal2015; @Vermeesch2020; @Zenko2015]. @Zenko2015 found that lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies [@Cardinal2015; @Vermeesch2020; @Zenko2015]. @Zenko2015 found that lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies [@Cardinal2015; @Vermeesch2020; @Zenko2015]. @Zenko2015 found that lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit [@Thomas2021]. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl [@USDHHS2018; @WHO2020]. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 
 # Method
 
@@ -63,16 +99,50 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eg
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-# Results
+# Results {#sec-results}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
 The three groups were comparable on baseline characteristics with no significant differences in age, gender distribution, BMI, or weekly physical activity levels (all $p > .05$).
 
-# Discussion
+::: {#tbl-mymarkdowntable apa-note="This is a note below the markdown table." onecolumn=true tbl-colwidths= "[25,25, 25, 25]" beforenotespace="-3em"}
+| Default | Left | Right | Center |
+|---------|:-----:|:------:|:-------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+Table Caption of a Markdown Table
+:::
+
+To refer to this table in text, use the `@` symbol followed by the reference label like so: As seen in @tbl-mytable, the first few numbers and letters of the alphabet are displayed.
+
+
+What if you want the tables and figures to be at the end of the document? In the .pdf format, you can set the `floatsintext` option to false. For .html and .docx documents, there is not yet an automatic way to put tables and figures at the end. You can, of course, just put them all at the end, in order. The reference labels will work no matter where they are in the text.
+
+::: {#tbl-widedata apa-note="This table spans both columns in journal mode PDF output." apa-twocolumn="true" beforenotespace="-2em"}
+| Category | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 | Value 8 |
+|:---------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| Group A  |   10.2  |   15.7  |   22.3  |   18.9  |   24.5  |   30.1  |   27.8  |   33.4  |
+| Group B  |   11.5  |   16.8  |   21.4  |   19.2  |   25.7  |   29.3  |   26.9  |   32.5  |
+| Group C  |   12.7  |   17.9  |   20.5  |   17.8  |   26.8  |   28.4  |   25.6  |   31.7  |
+Table Showing Data Across Multiple Categories and Values That Spans Two Columns
+:::
+
+# Discussion {#sec-discussion}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
+
+When creating tables and figures in journal mode, care must be taken not to make figures and tables wider than the columns, otherwise $\LaTeX$ sometimes makes them disappear.
+
+Here's an example of a table that spans two columns in journal mode. This is particularly useful for wide tables that contain many columns of data or information that would be difficult to read in a narrow column format.
+
+
+
+After inserting a wide table like this, you can continue with your document text. The table will be properly formatted in journal mode to span both columns, making it more readable.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies.
@@ -87,24 +157,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eg
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl eu nisl.
 
-## Corresponding Author
-
-Marcus A. Rodriguez, Ph.D.\\
-Pacific Northwest University, Department of Kinesiology\\
-Department of Kinesiology\\
-123 University Way\\
-Seattle, WA 98101\\
-Email: marcus.rodriguez@example.org
-
 ## Copyright Notice
-
-\copyright 2024 by Marcus A. Rodriguez, Sophia K. Chen, Jamal L. Washington, Elena R. Patel, and William C. Whiting.
+\noindent \copyright 2024 by Marcus A. Rodriguez, Sophia K. Chen, Jamal L. Washington, Elena R. Patel, and William C. Whiting.
 
 ## License
+\noindent \textbf{CC BY-NC-ND 4.0}
 
-\textbf{CC BY-NC-ND 4.0}
-
-This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+\noindent This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 
 # References
 
